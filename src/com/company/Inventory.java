@@ -323,7 +323,7 @@ class Inventory extends ArrayList<Shoe> {
 
 
         while (true) {
-            System.out.println("Add shoe type Aerobic_shoe or Climbing_shoe:");
+            System.out.println("Choose brand of shoe to remove");
 
             Set<String> brandSet = new HashSet<>();
             for (Shoe shoe : this.inventory) {

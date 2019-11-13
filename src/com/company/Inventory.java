@@ -199,10 +199,21 @@ class Inventory extends ArrayList<Shoe> {
                     answer = in.nextLine().toLowerCase();
                     if (answer.equals("y")) {
                         int purchase_price = 0;
+                        int newSale_price = 0;
                         System.out.println("The current price of this shoe is: " + GetShoe(brand, model, size, color, number)); //Get the sale_price of thr shoe
-                        System.out.println("Enter a new sale price");
-                        result = in.nextLine();  // Read input from user
-                        int newSale_price = Integer.parseInt(result);  // Convert input from type string to to type int
+
+                        while (true){
+                            System.out.println("Enter a new sale price");
+                            result = in.nextLine();  // Read input from user
+                            try{
+                                newSale_price = Integer.parseInt(result);  // Convert input from type string to to type int
+                                break;
+                            }
+                            catch(NumberFormatException e){
+                                System.out.println("Your input is incorrect.Enter a new sale price");
+                            }
+                        }
+
                         setSale_price(model, size, color, newSale_price);  // Change the sale_price
                         System.out.println("The new sale prise for this shoe is now: " + newSale_price); // Print the new sale_price for the shoe
                         break;
@@ -342,7 +353,6 @@ class Inventory extends ArrayList<Shoe> {
             } else {
                 System.out.println("Wrong choice!");    // End of choice af shoe brand
             }
-
 
         }
         boolean done = false;

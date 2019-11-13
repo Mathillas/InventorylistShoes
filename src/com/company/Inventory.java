@@ -230,15 +230,49 @@ class Inventory extends ArrayList<Shoe> {
             System.out.println("Enter a model:");
             model = in.nextLine();
             System.out.println("Enter a size");
-            size = Double.parseDouble(in.nextLine());
+            while (true) {
+                try {
+                    size = Double.parseDouble(in.nextLine());
+                    break;
+                } catch (NumberFormatException ex) {
+                    System.out.println("Your input is incorrect. Enter a size");
+                }
+            }
             System.out.println("Enter a color");
             color = in.nextLine();
-            System.out.println("Enter a number");
-            number = Integer.parseInt(in.nextLine());
+            System.out.println("Enter number");
+            while(true){
+                try {
+                    number = Integer.parseInt(in.nextLine());
+                    break;        // if value OK then break
+                }
+                catch(NumberFormatException ex){
+                    System.out.println("Your input is incorrect. Enter a number");
+                }
+            }
+
             System.out.println("Enter a purchase price");
-            purchase_price = Integer.parseInt(in.nextLine());
+            while (true){
+                try {
+                    purchase_price = Integer.parseInt(in.nextLine());
+                    break;        // if value OK then break
+                }
+                catch(NumberFormatException ex){
+                    System.out.println("Your input is incorrect. Enter a purchase price");
+                }
+            }
+
             System.out.println("Enter sale_price");
-            sale_price = Integer.parseInt(in.nextLine());
+            while(true){
+                try {
+                    sale_price = Integer.parseInt(in.nextLine());
+                    break;
+                }
+                catch(NumberFormatException ex){
+                    System.out.println("Your input is incorrect. Enter a sale price");
+                }
+            }
+
             System.out.println("Enter type of shoe: [A]erobic/[C]limbing or [E]xit");
             String type = in.nextLine().toLowerCase();
             switch (type) {

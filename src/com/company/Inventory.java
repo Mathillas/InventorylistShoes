@@ -486,7 +486,7 @@ class Inventory extends ArrayList<Shoe> {
         return null;
     }
 
-    public void saveToFile() {  // Method for Saving shoe to file
+    public void saveToFile() {  // Method for Saving shoe to a file in module shoe
 
         for (Shoe shoe : inventory) {
 
@@ -497,6 +497,8 @@ class Inventory extends ArrayList<Shoe> {
                 FileOutputStream fout = new FileOutputStream("./shoes/" + shoe.getBrand() + shoe.getModel() + shoe.getSize() + color + ".obj");
                 ObjectOutputStream objOut = new ObjectOutputStream(fout);
                 objOut.writeObject(shoe);
+                objOut.close(); // close the file after saved file
+                fout.close(); // close the file after saved file
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             } catch (IOException e) {
@@ -528,7 +530,7 @@ class Inventory extends ArrayList<Shoe> {
         if (files != null) {
             for (File file : files) {
                 try {
-                    inventory.add(readShoe(file.getName()));// ass one shoe at a time
+                    inventory.add(readShoe(file.getName()));// add one shoe at a time
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

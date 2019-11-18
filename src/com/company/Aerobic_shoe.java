@@ -7,7 +7,7 @@ class Aerobic_shoe extends Shoe implements Serializable { // Class Aerobic_shoe 
     private static final long serialVersionUID = 2L;
 
 
-    public Aerobic_shoe( String hitta_på, String a, int i, String pink ) { //Default Constructor
+    public Aerobic_shoe() { //Default Constructor
     }
 
     //Constructor for Aerobic shoe properties

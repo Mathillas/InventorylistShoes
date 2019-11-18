@@ -4,9 +4,10 @@ import java.io.Serializable;
 
 public class ClimbingShoe extends Shoe implements Serializable { // Class ClimbingShoe inherited from class Shoe
     private static final long serialVersionUID = 3L;
+
     //Constructor for ClimbingShoe
-    public ClimbingShoe( String brand, String name, double size, String color, int number, int cost, int selling_price) {
-        super(brand,name,size, color, number, cost, selling_price);
+    public ClimbingShoe( String brand, String name, double size, String color, int number, int cost, int selling_price ) {
+        super(brand, name, size, color, number, cost, selling_price);
     }
 
     @Override

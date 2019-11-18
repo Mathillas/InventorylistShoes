@@ -3,7 +3,7 @@ package com.company;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Shoe  implements Serializable {  // Implement of interface Serializable to be able to save shoes to a file
+public class Shoe implements Serializable {  // Implement of interface Serializable to be able to save shoes to a file
     private static final long serialVersionUID = 1L;
     protected String brand;  // Property shoe brand
     protected String model;  // Property shoe model
@@ -65,8 +65,6 @@ public class Shoe  implements Serializable {  // Implement of interface Serializ
     public int getSale_price() {
         return sale_price;
     }
-
-
 
 
     @Override

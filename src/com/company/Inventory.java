@@ -146,7 +146,7 @@ class Inventory extends ArrayList<Shoe> {
                         }
                         String result = in.nextLine();  // Read input from user
                         if (result.matches("\\d+")) {   // If choise of number is a figure
-                            if(!((result.equals("0")) || (result.equals("1")) || (result.equals("2")) || (result.equals("3")) || (result.equals("4")) || (result.equals("5")) || (result.equals("6")) )){
+                            if (!((result.equals("0")) || (result.equals("1")) || (result.equals("2")) || (result.equals("3")) || (result.equals("4")) || (result.equals("5")) || (result.equals("6")))) {
                                 System.out.println("Wrong choice. Choose a number: 1-6");
                                 continue;
 
@@ -202,14 +202,13 @@ class Inventory extends ArrayList<Shoe> {
                         int newSale_price = 0;
                         System.out.println("The current price of this shoe is: " + GetShoe(brand, model, size, color, number)); //Get the sale_price of thr shoe
 
-                        while (true){
+                        while (true) {
                             System.out.println("Enter a new sale price");
                             result = in.nextLine();  // Read input from user
-                            try{
+                            try {
                                 newSale_price = Integer.parseInt(result);  // Convert input from type string to to type int
                                 break;
-                            }
-                            catch(NumberFormatException e){
+                            } catch (NumberFormatException e) {
                                 System.out.println("Your input is incorrect.Enter a new sale price");
                             }
                         }
@@ -252,34 +251,31 @@ class Inventory extends ArrayList<Shoe> {
             System.out.println("Enter a color");
             color = in.nextLine();
             System.out.println("Enter number");
-            while(true){
+            while (true) {
                 try {
                     number = Integer.parseInt(in.nextLine());
                     break;        // if value OK then break
-                }
-                catch(NumberFormatException ex){
+                } catch (NumberFormatException ex) {
                     System.out.println("Your input is incorrect. Enter a number");
                 }
             }
 
             System.out.println("Enter a purchase price");
-            while (true){
+            while (true) {
                 try {
                     purchase_price = Integer.parseInt(in.nextLine());
                     break;        // if value OK then break
-                }
-                catch(NumberFormatException ex){
+                } catch (NumberFormatException ex) {
                     System.out.println("Your input is incorrect. Enter a purchase price");
                 }
             }
 
             System.out.println("Enter sale_price");
-            while(true){
+            while (true) {
                 try {
                     sale_price = Integer.parseInt(in.nextLine());
                     break;
-                }
-                catch(NumberFormatException ex){
+                } catch (NumberFormatException ex) {
                     System.out.println("Your input is incorrect. Enter a sale price");
                 }
             }

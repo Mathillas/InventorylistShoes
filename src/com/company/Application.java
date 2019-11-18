@@ -9,9 +9,7 @@ public class Application {
         menu.showMainMenu();  // call for method MainMenu()
 
 
-
-
-}
+    }
 
 
 }

@@ -16,6 +16,7 @@ class Aerobic_shoe extends Shoe implements Serializable { // Class Aerobic_shoe 
 
     }
 
+
     @Override
     public String getBrand() {
         return super.getBrand();

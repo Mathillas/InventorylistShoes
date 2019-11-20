@@ -377,7 +377,7 @@ class Inventory extends ArrayList<Shoe> {
                 switch (answer) {
                     case "y":
                         Shoe shoe = brandList.get(Integer.parseInt(result));
-                        inventory.remove(shoe);
+                        inventory.remove(shoe);  // Remove shoe from inventorylist
                         Path filePath = Paths.get("./shoes/" + brand + model + size + color + ".obj");
                         try {
                             Files.delete(filePath);

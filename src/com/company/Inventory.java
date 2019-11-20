@@ -171,6 +171,7 @@ class Inventory extends ArrayList<Shoe> {
                     Set<Integer> numberSet = new HashSet<>();
                     for (Shoe shoe : this.inventory) {
                         numberSet.add(shoe.number);
+                        System.out.println(numberSet);
                     }
                     ArrayList<Integer> numberChoice = new ArrayList<>(numberSet);
                     for (int i = 0; i < numberSet.size(); i++) {
@@ -371,16 +372,19 @@ class Inventory extends ArrayList<Shoe> {
                 color = brandList.get(Integer.parseInt(result)).getColor();
                 System.out.println("You haven chosen to remove " + getShoe(brand, model, size, color).toString());
                 System.out.println("Do you want to continue with removal? [Y]es]/[N]o");
+
                 String answer = in.nextLine().toLowerCase();
                 switch (answer) {
                     case "y":
+                        Shoe shoe = brandList.get(Integer.parseInt(result));
+                        inventory.remove(shoe);
                         Path filePath = Paths.get("./shoes/" + brand + model + size + color + ".obj");
                         try {
                             Files.delete(filePath);
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
-                        System.out.println("You have now removed " + getShoe(brand, model, size, color).toString());
+                        System.out.println("You have now removed " + shoe.toString());
                         done = true;
                         break;
 
